@@ -22,5 +22,8 @@ nmap <F8> :TagbarToggle<CR>
 let g:tagbar_left = 1
 let g:tagbar_width = 33
 let g:tagbar_autoshowtag = 1
+let NERDTreeWinPos = 1
+nmap <F7> :NERDTreeToggle<CR>
 nnoremap <F3> :CtrlPSmartTabs<CR>
 nnoremap <F4> :CtrlP<CR>
+
