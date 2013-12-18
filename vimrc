@@ -17,8 +17,7 @@ Bundle 'https://github.com/kien/ctrlp.vim.git'
 Bundle 'git://github.com/majutsushi/tagbar'
 Bundle 'git://github.com/tpope/vim-fugitive.git'
 Bundle 'https://github.com/scrooloose/nerdtree.git'
-Bundle 'https://github.com/klen/python-mode.git'
-"Bundle 'klen/python-mode'
+" Bundle 'https://github.com/klen/python-mode.git'
 " vundle end
 
 set nu
