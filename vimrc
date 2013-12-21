@@ -6,17 +6,18 @@ call pathogen#runtime_append_all_bundles()
 set nocompatible              " be iMproved
 filetype on                  " required!
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
+" Bundle 'gmarik/vundle'
 Bundle 'DavidEGx/ctrlp-smarttabs'
 Bundle 'https://github.com/kien/ctrlp.vim.git'
 Bundle 'git://github.com/majutsushi/tagbar'
 Bundle 'git://github.com/tpope/vim-fugitive.git'
 Bundle 'https://github.com/scrooloose/nerdtree.git'
+" Bundle 'https://github.com/rkulla/pydictiion.git'
 " Bundle 'https://github.com/klen/python-mode.git'
 " vundle end
 
@@ -34,3 +35,10 @@ let NERDTreeWinPos = 1
 nmap <F7> :NERDTreeToggle<CR>
 nnoremap <F3> :CtrlPSmartTabs<CR>
 nnoremap <F4> :CtrlP<CR>
+
+" pydictiion start
+" filetype plugin on
+" let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
+" let g:pydiction_menu_height = 20
+" pydictiion end 
+
