@@ -24,9 +24,9 @@ Bundle 'https://github.com/scrooloose/nerdtree.git'
 set nu
 set hlsearch
 syntax on
-set tabstop=4
-set shiftwidth=4
-set expandtab
+"set tabstop=4
+"set shiftwidth=4
+"set expandtab
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_left = 1
 let g:tagbar_width = 33
