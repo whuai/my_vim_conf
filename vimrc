@@ -5,6 +5,7 @@ call pathogen#runtime_append_all_bundles()
 " vundle start
 set nocompatible              " be iMproved
 filetype on                  " required!
+filetype plugin on
 
 set rtp+=~/.vim/vundle/
 call vundle#rc()
@@ -19,13 +20,17 @@ Bundle 'git://github.com/tpope/vim-fugitive.git'
 Bundle 'https://github.com/scrooloose/nerdtree.git'
 " Bundle 'https://github.com/rkulla/pydictiion.git'
 " Bundle 'https://github.com/klen/python-mode.git'
+" Bundle 'c.vim'
+Bundle 'a.vim'
+Bundle 'grep.vim'
+Bundle 'OmniCppComplete'
 " vundle end
 
 set nu
 set hlsearch
 syntax on
-"set tabstop=4
-"set shiftwidth=4
+"set tabstop=2
+"set shiftwidth=2
 "set expandtab
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_left = 1
