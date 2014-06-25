@@ -59,4 +59,8 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_enable_diagnostic_highlighting = 0
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" Shutdown ycm_auto_trigger
+nnoremap <F9> :let g:ycm_auto_trigger = 0<CR>
+" Reopen ycm_auto_trigger
+nnoremap <F10> :let g:ycm_auto_trigger = 1<CR>
 
