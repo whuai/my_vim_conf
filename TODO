@@ -1,0 +1,1 @@
+1. write a shift_ycm_auto_trigger() to change g:ycm_auto_trigger value from 1 to 0 or from 0 to 1
