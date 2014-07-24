@@ -29,6 +29,7 @@ Bundle 'grep.vim'
 
 set nu
 set hlsearch
+set incsearch
 syntax on
 "set tabstop=2
 "set shiftwidth=2
@@ -55,7 +56,7 @@ let tags = "./tags"
 let mapleader = ","
 let g:ycm_global_ycm_extra_conf = '~/.vim/etc/ycm_extra_conf.py'
 let g:ycm_collect_identifiers_from_tag_files = 1
-let g:ycm_confirm_extra_conf = 0
+let g:ycm_confirm_extra_conf = 1
 let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_enable_diagnostic_highlighting = 0
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
