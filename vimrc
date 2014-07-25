@@ -25,12 +25,16 @@ Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 Bundle 'a.vim'
 Bundle 'grep.vim'
 " Bundle 'OmniCppComplete'
+" Bundle 'scrooloose/syntastic'
 " vundle end
 
 set nu
 set hlsearch
 set incsearch
 syntax on
+" set background=dark
+colorscheme desert
+let g:solarized_termcolors=256
 "set tabstop=2
 "set shiftwidth=2
 "set expandtab
@@ -52,6 +56,7 @@ nnoremap <F4> :CtrlP<CR>
 
 let tags = "./tags"
 
+" let g:syntastic_check_on_open=1
 " for YCM
 let mapleader = ","
 let g:ycm_global_ycm_extra_conf = '~/.vim/etc/ycm_extra_conf.py'
