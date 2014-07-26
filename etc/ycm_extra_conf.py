@@ -65,8 +65,16 @@ flags = [
 #
 '/usr/include',
 '/usr/include/c++',
+'/usr/include/c++/4.8',
 '/usr/include/x86_64-linux-gnu/c++',
 '/usr/local/include',
+#python 
+'/usr/lib/python2.7',
+#'/usr/loca/lib/python2.7',
+#
+#
+'/usr/src/linux-headers-3.13.0-30-generic',
+'/home/michael/cs',
 # This path will only work on OS X, but extra paths that don't exist are not
 # harmful
 '/System/Library/Frameworks/Python.framework/Headers',
