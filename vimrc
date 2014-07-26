@@ -25,10 +25,13 @@ Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 Bundle 'a.vim'
 Bundle 'grep.vim'
 " Bundle 'OmniCppComplete'
+"
+Bundle 'rizzatti/dash.vim'
 " vundle end
 
 set nu
 set hlsearch
+set incsearch
 syntax on
 "set tabstop=2
 "set shiftwidth=2
@@ -63,4 +66,5 @@ nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <F9> :let g:ycm_auto_trigger = 0<CR>
 " Reopen ycm_auto_trigger
 nnoremap <F10> :let g:ycm_auto_trigger = 1<CR>
+
 
