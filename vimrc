@@ -24,9 +24,15 @@ Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 " Bundle 'c.vim'
 Bundle 'a.vim'
 Bundle 'grep.vim'
+" Bundle 'bling/vim-airline'
+Bundle 'git://github.com/Lokaltog/vim-powerline'
 " Bundle 'OmniCppComplete'
 " Bundle 'scrooloose/syntastic'
 " vundle end
+
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+set encoding=utf-8
 
 set nu
 set hlsearch
@@ -35,9 +41,10 @@ syntax on
 " set background=dark
 colorscheme desert
 let g:solarized_termcolors=256
-"set tabstop=2
-"set shiftwidth=2
-"set expandtab
+" set tabstop=2
+" set shiftwidth=2
+" set softtabstop=2
+" set expandtab
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_left = 1
 let g:tagbar_width = 33
@@ -70,3 +77,11 @@ nnoremap <F9> :let g:ycm_auto_trigger = 0<CR>
 " Reopen ycm_auto_trigger
 nnoremap <F10> :let g:ycm_auto_trigger = 1<CR>
 
+" powerline
+set t_Co=256
+let g:Powerline_cache_enabled = 1
+let g:Powerline_mode_n = 'NORMAL'
+" let g:Powerline_theme = 'solarized256'
+let g:Powerline_colorscheme = 'solarized256'
+let g:Powerline_stl_path_style = 'relative'
+" end powerline
