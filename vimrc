@@ -79,6 +79,7 @@ nnoremap <F9> :let g:ycm_auto_trigger = 0<CR>
 nnoremap <F10> :let g:ycm_auto_trigger = 1<CR>
 
 " powerline
+set laststatus=2
 set t_Co=256
 let g:Powerline_cache_enabled = 1
 let g:Powerline_mode_n = 'NORMAL'
