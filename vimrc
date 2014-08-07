@@ -27,6 +27,7 @@ Bundle 'grep.vim'
 " Bundle 'bling/vim-airline'
 Bundle 'git://github.com/Lokaltog/vim-powerline'
 " Bundle 'OmniCppComplete'
+Bundle 'rizzatti/dash.vim'
 " Bundle 'scrooloose/syntastic'
 " vundle end
 
