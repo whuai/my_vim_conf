@@ -29,6 +29,7 @@ Bundle 'git://github.com/Lokaltog/vim-powerline'
 " Bundle 'OmniCppComplete'
 Bundle 'rizzatti/dash.vim'
 " Bundle 'scrooloose/syntastic'
+Bundle 'mileszs/ack.vim'
 " vundle end
 
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
@@ -38,6 +39,7 @@ set encoding=utf-8
 set nu
 set hlsearch
 set incsearch
+set grepprg=ack
 syntax on
 " set background=dark
 colorscheme desert
