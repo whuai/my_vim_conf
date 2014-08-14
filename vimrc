@@ -129,6 +129,6 @@ nnoremap <leader>m :MRU<CR>
 
 " Gundo mapping and settings
 nnoremap <F5> :GundoToggle<CR>
-let g:gundo_width = 40
-let g:gundo_preview_height = 40
+let g:gundo_width = 60
+let g:gundo_preview_height = 25
 let g:gundo_right = 1
