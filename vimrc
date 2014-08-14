@@ -34,6 +34,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'yegappan/mru'
 Bundle 'vim-scripts/tComment'
 Bundle 'tpope/vim-abolish'
+Bundle 'sjl/gundo.vim'
 " vundle end
 
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
@@ -125,3 +126,9 @@ endfunction
 
 " MRU mapping
 nnoremap <leader>m :MRU<CR>
+
+" Gundo mapping and settings
+nnoremap <F5> :GundoToggle<CR>
+let g:gundo_width = 40
+let g:gundo_preview_height = 40
+let g:gundo_right = 1
