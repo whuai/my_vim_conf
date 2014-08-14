@@ -30,6 +30,9 @@ Bundle 'git://github.com/Lokaltog/vim-powerline'
 Bundle 'rizzatti/dash.vim'
 " Bundle 'scrooloose/syntastic'
 Bundle 'mileszs/ack.vim'
+Bundle 'godlygeek/tabular'
+Bundle 'yegappan/mru'
+Bundle 'vim-scripts/tComment'
 " vundle end
 
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
@@ -97,3 +100,24 @@ if has("autocmd")
   autocmd FileType cc setlocal ts=2 sts=2 sw=2 et
   autocmd FileType shell setlocal ts=8 sts=8 sw=8
 endif
+
+" Tabularize mapping
+nmap <leader>a= :Tabularize /=<CR>
+vmap <leader>a= :Tabularize /=<CR>
+nmap <leader>a: :Tabularize /:\zs<CR>
+vmap <leader>a: :Tabularize /:\zs<CR>
+nmap <leader>a\| :Tabularize /\|<CR>
+vmap <leader>a\| :Tabularize /\|<CR>
+
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
+" end Tabularize mapping
