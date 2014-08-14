@@ -33,6 +33,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'yegappan/mru'
 Bundle 'vim-scripts/tComment'
+Bundle 'tpope/vim-abolish'
 " vundle end
 
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
