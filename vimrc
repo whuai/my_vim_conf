@@ -121,3 +121,6 @@ function! s:align()
   endif
 endfunction
 " end Tabularize mapping
+
+" MRU mapping
+nnoremap <leader>m :MRU<CR>
