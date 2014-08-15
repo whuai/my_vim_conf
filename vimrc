@@ -30,7 +30,7 @@ Bundle 'vim-scripts/tComment'
 Bundle 'tpope/vim-abolish'
 Bundle 'sjl/gundo.vim'
 Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
+Bundle 'airhuman/vim-snippets'
 " vundle end
 
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
