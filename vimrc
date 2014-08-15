@@ -24,12 +24,25 @@ Bundle 'git://github.com/Lokaltog/vim-powerline'
 Bundle 'rizzatti/dash.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'mileszs/ack.vim'
-Bundle 'godlygeek/tabular'
-Bundle 'yegappan/mru'
-Bundle 'vim-scripts/tComment'
-Bundle 'tpope/vim-abolish'
-Bundle 'sjl/gundo.vim'
-Bundle 'SirVer/ultisnips'
+
+" align text :Tab /pattern
+Bundle 'godlygeek/tabular'                             
+
+" <leader>m  :MRU
+Bundle 'yegappan/mru'                                  
+
+" gcc gcip
+Bundle 'vim-scripts/tComment'                          
+
+" :S/note{,s}/entr{y,ies}/g
+Bundle 'tpope/vim-abolish'                             
+
+" <F5> :GundoToggle
+Bundle 'sjl/gundo.vim'                                 
+
+" <c-l>
+Bundle 'SirVer/ultisnips'                              
+
 Bundle 'airhuman/vim-snippets'
 " vundle end
 
