@@ -93,6 +93,8 @@ if has("autocmd")
   filetype on
   autocmd FileType python setlocal ts=4 sts=4 sw=4 et
   autocmd FileType cc setlocal ts=2 sts=2 sw=2 et
+  autocmd FileType cpp setlocal ts=2 sts=2 sw=2 et
+  autocmd FileType c setlocal ts=4 sts=4 sw=4 et
   autocmd FileType shell setlocal ts=8 sts=8 sw=8
 endif
 
