@@ -3,8 +3,8 @@ git clone --recurse-submodules https://github.com/airhuman/my_vim_conf.git
 
 FAQ:
 1. if ultisnips doesn't work with vundle 
-# cd ~/.vim
-# /bin/bash init_ultisnips.sh
+$ cd ~/.vim
+$ /bin/bash init_ultisnips.sh
 
 
 
