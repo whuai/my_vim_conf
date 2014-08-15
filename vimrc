@@ -4,10 +4,10 @@ call pathogen#runtime_append_all_bundles()
 
 " vundle start
 set nocompatible              " be iMproved
-filetype on                  " required!
+filetype on                 " required!
 filetype plugin on
 
-set rtp+=~/.vim/vundle/
+set rtp+=~/.vim/vundle
 call vundle#rc()
 
 " let Vundle manage Vundle
@@ -19,22 +19,18 @@ Bundle 'git://github.com/majutsushi/tagbar'
 Bundle 'git://github.com/tpope/vim-fugitive.git'
 Bundle 'https://github.com/scrooloose/nerdtree.git'
 Bundle 'https://github.com/Valloric/YouCompleteMe.git'
-" Bundle 'https://github.com/rkulla/pydictiion.git'
-" Bundle 'https://github.com/klen/python-mode.git'
-" Bundle 'c.vim'
 Bundle 'a.vim'
-" Bundle 'grep.vim'
-" Bundle 'bling/vim-airline'
 Bundle 'git://github.com/Lokaltog/vim-powerline'
-" Bundle 'OmniCppComplete'
 Bundle 'rizzatti/dash.vim'
-" Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/syntastic'
 Bundle 'mileszs/ack.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'yegappan/mru'
 Bundle 'vim-scripts/tComment'
 Bundle 'tpope/vim-abolish'
 Bundle 'sjl/gundo.vim'
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 " vundle end
 
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
@@ -46,13 +42,8 @@ set hlsearch
 set incsearch
 set grepprg=ack
 syntax on
-" set background=dark
 colorscheme desert
 let g:solarized_termcolors=256
-" set tabstop=2
-" set shiftwidth=2
-" set softtabstop=2
-" set expandtab
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_left = 1
 let g:tagbar_width = 33
@@ -71,7 +62,9 @@ nnoremap <F4> :CtrlP<CR>
 
 let tags = "./tags"
 
-" let g:syntastic_check_on_open=1
+" syntastic
+let g:syntastic_check_on_open=1
+
 " for YCM
 let mapleader = ","
 let g:ycm_global_ycm_extra_conf = '~/.vim/etc/ycm_extra_conf.py'
@@ -132,3 +125,13 @@ nnoremap <F5> :GundoToggle<CR>
 let g:gundo_width = 40
 let g:gundo_preview_height = 40
 let g:gundo_right = 1
+
+" ultisnips
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<c-l>"
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
+"let g:UltiSnipsSnippetDirectories=["~/.vim/UltiSnips"]
+nnoremap <F2> :UltiSnipsEdit<CR>
+" let g:ultisnips_python_style = "GOOGLE"
