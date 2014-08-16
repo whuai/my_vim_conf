@@ -84,6 +84,7 @@ vnoremap <c-r> "hy:%s/<c-r>h//gc<left><left><left>
 " syntastic
 let g:syntastic_check_on_open=1
 let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_pylint_args = '--rcfile=~/.pylintrc' 
 
 " for YCM
 let g:ycm_global_ycm_extra_conf = '~/.vim/etc/ycm_extra_conf.py'
