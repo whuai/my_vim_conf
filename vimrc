@@ -10,6 +10,12 @@ filetype plugin on
 set rtp+=~/.vim/vundle
 call vundle#rc()
 
+" Map leader and localleader key to comma
+ let mapleader = ","
+ let g:mapleader = ","
+ let maplocalleader = ","
+ let g:maplocalleader = ","
+
 " let Vundle manage Vundle
 " required! 
 " Bundle 'gmarik/vundle'
@@ -57,35 +63,37 @@ set grepprg=ack
 syntax on
 colorscheme desert
 let g:solarized_termcolors=256
-nmap <F8> :TagbarToggle<CR>
+nnoremap <silent> <leader>2 :TagbarToggle<CR>
 let g:tagbar_left = 1
 let g:tagbar_width = 33
 let g:tagbar_autoshowtag = 1
 let NERDTreeWinPos = 1
-nmap <F7> :NERDTreeToggle<CR>
-nnoremap <F3> :CtrlPSmartTabs<CR>
-nnoremap <F4> :CtrlP<CR>
-
-" pydictiion start
-" filetype plugin on
-" let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
-" let g:pydiction_menu_height = 20
-" pydictiion end 
 
 
 let tags = "./tags"
+nnoremap <silent> <leader><tab> :NERDTreeToggle<CR>
+nnoremap <F3> :CtrlPSmartTabs<CR>
+
+" Q: Closes the window
+nnoremap Q :q<cr>
+
+" Ctrl-r: Easier search and replace
+vnoremap <c-r> "hy:%s/<c-r>h//gc<left><left><left>
+
 
 " syntastic
 let g:syntastic_check_on_open=1
+let g:syntastic_python_checkers = ['pylint']
 
 " for YCM
-let mapleader = ","
 let g:ycm_global_ycm_extra_conf = '~/.vim/etc/ycm_extra_conf.py'
 let g:ycm_collect_identifiers_from_tag_files = 1
 let g:ycm_confirm_extra_conf = 1
 let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_enable_diagnostic_highlighting = 0
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <silent> <Leader>d :YcmCompleter GoToDefinition<cr>
+nnoremap <silent> <Leader>g :YcmCompleter GoToDeclaration<cr>
 " Shutdown ycm_auto_trigger
 nnoremap <F9> :let g:ycm_auto_trigger = 0<CR>
 " Reopen ycm_auto_trigger
@@ -108,7 +116,7 @@ if has("autocmd")
   autocmd FileType cc setlocal ts=2 sts=2 sw=2 et
   autocmd FileType cpp setlocal ts=2 sts=2 sw=2 et
   autocmd FileType c setlocal ts=4 sts=4 sw=4 et
-  autocmd FileType shell setlocal ts=8 sts=8 sw=8
+  autocmd FileType shell setlocal ts=4 sts=4 sw=4 et
 endif
 
 " Tabularize mapping
