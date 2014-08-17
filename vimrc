@@ -50,6 +50,8 @@ Bundle 'sjl/gundo.vim'
 Bundle 'SirVer/ultisnips'                              
 
 Bundle 'airhuman/vim-snippets'
+
+Bundle 'jmcantrell/vim-virtualenv'
 " vundle end
 
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
@@ -85,6 +87,7 @@ vnoremap <c-r> "hy:%s/<c-r>h//gc<left><left><left>
 let g:syntastic_check_on_open=1
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_python_pylint_args = '--rcfile=~/.pylintrc' 
+let g:syntastic_cpp_checkers = ['cpplint']
 
 " for YCM
 let g:ycm_global_ycm_extra_conf = '~/.vim/etc/ycm_extra_conf.py'
