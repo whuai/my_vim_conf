@@ -24,6 +24,7 @@ Bundle 'https://github.com/kien/ctrlp.vim.git'
 Bundle 'git://github.com/majutsushi/tagbar'
 Bundle 'git://github.com/tpope/vim-fugitive.git'
 Bundle 'https://github.com/scrooloose/nerdtree.git'
+" Bundle "davidhalter/jedi-vim"
 Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 Bundle 'a.vim'
 Bundle 'git://github.com/Lokaltog/vim-powerline'
@@ -82,9 +83,14 @@ nnoremap Q :q<cr>
 " Ctrl-r: Easier search and replace
 vnoremap <c-r> "hy:%s/<c-r>h//gc<left><left><left>
 
+" jedi-vim
+let g:jedi#completions_command = "<C-N>"
+
 
 " syntastic
-let g:syntastic_check_on_open=1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_ignore_files=[".*\.py$"]
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_python_pylint_args = '--rcfile=~/.pylintrc' 
 let g:syntastic_cpp_checkers = ['cpplint']
@@ -95,6 +101,7 @@ let g:ycm_collect_identifiers_from_tag_files = 1
 let g:ycm_confirm_extra_conf = 1
 let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_enable_diagnostic_highlighting = 0
+let g:ycm_autoclose_preview_window_after_completion = 1
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <silent> <Leader>d :YcmCompleter GoToDefinition<cr>
 nnoremap <silent> <Leader>g :YcmCompleter GoToDeclaration<cr>
