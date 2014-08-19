@@ -62,6 +62,8 @@ set encoding=utf-8
 set nu
 set hlsearch
 set incsearch
+set ignorecase
+set smartcase
 set grepprg=ack
 syntax on
 colorscheme desert
@@ -72,13 +74,14 @@ let g:tagbar_width = 33
 let g:tagbar_autoshowtag = 1
 let NERDTreeWinPos = 1
 
-
 let tags = "./tags"
 nnoremap <silent> <leader><tab> :NERDTreeToggle<CR>
 nnoremap <F3> :CtrlPSmartTabs<CR>
 
 " Q: Closes the window
 nnoremap Q :q<cr>
+" close all windows
+nnoremap <leader>Q :qa!<cr>
 
 " Ctrl-r: Easier search and replace
 vnoremap <c-r> "hy:%s/<c-r>h//gc<left><left><left>
@@ -169,3 +172,24 @@ let g:UltiSnipsEditSplit="vertical"
 "let g:UltiSnipsSnippetDirectories=["~/.vim/UltiSnips"]
 nnoremap <F2> :UltiSnipsEdit<CR>
 " let g:ultisnips_python_style = "GOOGLE"
+"
+
+" copy
+set clipboard=unnamed
+
+" easy move between tabs
+map <leader>n <esc>:tabprevious<cr>
+map <leader>m <esc>:tabnext<cr>
+
+" easy move around windows
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
+" sort
+vnoremap <leader>s :sort<cr>
+
+" easy move code blocks
+vnoremap < <gv 
+vnoremap > >gv 
