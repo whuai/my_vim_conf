@@ -196,3 +196,6 @@ vnoremap <leader>s :sort<cr>
 " easy move code blocks
 vnoremap < <gv 
 vnoremap > >gv 
+
+" command-T
+let g:CommandTCancelMap='<c-c>'
