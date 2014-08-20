@@ -53,6 +53,8 @@ Bundle 'SirVer/ultisnips'
 Bundle 'airhuman/vim-snippets'
 
 Bundle 'jmcantrell/vim-virtualenv'
+
+Bundle 'vim-scripts/Command-T'
 " vundle end
 
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
@@ -131,6 +133,7 @@ if has("autocmd")
   autocmd FileType cpp setlocal ts=2 sts=2 sw=2 et
   autocmd FileType c setlocal ts=4 sts=4 sw=4 et
   autocmd FileType shell setlocal ts=4 sts=4 sw=4 et
+  autocmd FileType java setlocal ts=4 sts=4 sw=4 et
 endif
 
 " Tabularize mapping
@@ -155,7 +158,7 @@ endfunction
 " end Tabularize mapping
 
 " MRU mapping
-nnoremap <leader>m :MRU<CR>
+nnoremap <leader>M :MRU<CR>
 
 " Gundo mapping and settings
 nnoremap <F5> :GundoToggle<CR>
