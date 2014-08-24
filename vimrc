@@ -66,6 +66,7 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+set autoindent
 set grepprg=ack
 syntax on
 colorscheme desert
@@ -202,4 +203,3 @@ let g:CommandTCancelMap='<c-c>'
 
 " ctrl+k ctrl+l dictionary completion
 set dictionary+=/usr/share/dict/words
-
