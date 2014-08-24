@@ -203,3 +203,6 @@ let g:CommandTCancelMap='<c-c>'
 
 " ctrl+k ctrl+l dictionary completion
 set dictionary+=/usr/share/dict/words
+
+nnoremap <c-e> 3<c-e>
+nnoremap <c-y> 3<c-y>
