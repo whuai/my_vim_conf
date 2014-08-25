@@ -206,3 +206,10 @@ set dictionary+=/usr/share/dict/words
 
 nnoremap <c-e> 3<c-e>
 nnoremap <c-y> 3<c-y>
+
+" pairs
+inoremap <leader>" ""<ESC>i
+inoremap <leader>' ''<ESC>i
+inoremap <leader>[ []<ESC>i
+inoremap <leader>( ()<ESC>i
+
