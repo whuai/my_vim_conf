@@ -55,6 +55,9 @@ Bundle 'airhuman/vim-snippets'
 Bundle 'jmcantrell/vim-virtualenv'
 
 Bundle 'vim-scripts/Command-T'
+
+"easy motion
+Bundle "Lokaltog/vim-easymotion"
 " vundle end
 
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
