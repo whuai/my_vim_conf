@@ -213,3 +213,5 @@ inoremap <leader>' ''<ESC>i
 inoremap <leader>[ []<ESC>i
 inoremap <leader>( ()<ESC>i
 
+" set list listchars=tab:› ,trail:-,extends:>,precedes:<,eol:
+set list listchars=eol:¬
