@@ -216,5 +216,9 @@ inoremap <leader>' ''<ESC>i
 inoremap <leader>[ []<ESC>i
 inoremap <leader>( ()<ESC>i
 
-" set list listchars=tab:› ,trail:-,extends:>,precedes:<,eol:
-set list listchars=eol:¬
+" set list listchars=tab:›,trail:-,extends:>,precedes:<,eol:
+" set list listchars=eol:¬
+
+" set cursorcolumn
+
+set foldmethod=indent
