@@ -58,6 +58,9 @@ Bundle 'vim-scripts/Command-T'
 
 "easy motion
 Bundle "Lokaltog/vim-easymotion"
+
+" for cpp code format
+Bundle "rhysd/vim-clang-format"
 " vundle end
 
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
@@ -221,4 +224,16 @@ inoremap <leader>( ()<ESC>i
 
 " set cursorcolumn
 
-set foldmethod=indent
+" set foldmethod=indent
+
+" clang-format
+let g:clang_format = "google"
+" let g:clang_format#style_options = {
+" \ "AccessModifierOffset" : -4,
+" \ "AllowShortIfStatementsOnASingleLine" : "true",
+" \ "AlwaysBreakTemplateDeclarations" : "true",
+" \ "Standard" : "C++11"}
+" map to <Leader>cf in C++ code
+autocmd FileType cc,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType cc,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+" end clang-format

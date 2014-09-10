@@ -13,6 +13,8 @@ $ sudo apt-get install ruby1.9.1-dev
 $ ruby extconf.rb
 $ make
 
-
-
-
+3. Using clang-format to format c++ code
+$ sudo apt-get install clang-format-3.5
+$ sudo ln -s /usr/bin/clang-format-3.5 /usr/bin/clang-format
+# $ clang-format -style=Google -dump-config > ~/.clang-format
+$ ln -s ~/.vim/etc/clang-format ~/.clang-format
