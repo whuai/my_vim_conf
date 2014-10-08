@@ -61,6 +61,9 @@ Bundle "Lokaltog/vim-easymotion"
 
 " for cpp code format
 Bundle "rhysd/vim-clang-format"
+
+" vim-surround
+Bundle "tpope/vim-surround"
 " vundle end
 
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
@@ -234,6 +237,6 @@ let g:clang_format = "google"
 " \ "AlwaysBreakTemplateDeclarations" : "true",
 " \ "Standard" : "C++11"}
 " map to <Leader>cf in C++ code
-autocmd FileType cc,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
-autocmd FileType cc,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+autocmd FileType c,cc,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cc,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 " end clang-format
