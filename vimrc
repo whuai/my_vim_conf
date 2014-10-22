@@ -240,3 +240,6 @@ let g:clang_format = "google"
 autocmd FileType c,cc,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cc,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 " end clang-format
+"
+
+set backspace=indent,eol,start
