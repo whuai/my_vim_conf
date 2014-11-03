@@ -254,4 +254,4 @@ set backspace=indent,eol,start
 " {Vi: "cw" when on a blank followed by other blanks changes only the first
 " blank; this is probably a bug, because "dw" deletes all the blanks; use the
 " 'w' flag in 'cpoptions' to make it work like Vi anyway}
-:map cw dwi
+map cw dwi
