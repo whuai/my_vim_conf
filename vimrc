@@ -27,7 +27,6 @@ Bundle 'https://github.com/scrooloose/nerdtree.git'
 " Bundle "davidhalter/jedi-vim"
 Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 Bundle 'a.vim'
-Bundle 'git://github.com/Lokaltog/vim-powerline'
 Bundle 'rizzatti/dash.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'mileszs/ack.vim'
@@ -67,6 +66,9 @@ Bundle "tpope/vim-surround"
 
 " cscope
 Bundle "vim-scripts/cscope.vim"
+
+" vim-airline
+Bundle "bling/vim-airline"
 " vundle end
 
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
@@ -128,17 +130,6 @@ nnoremap <F9> :let g:ycm_auto_trigger = 0<CR>
 " Reopen ycm_auto_trigger
 nnoremap <F10> :let g:ycm_auto_trigger = 1<CR>
 
-" powerline
-set laststatus=2
-set t_Co=256
-let g:Powerline_cache_enabled = 1
-let g:Powerline_mode_n = 'NORMAL'
-" let g:Powerline_theme = 'solarized256'
-let g:Powerline_colorscheme = 'solarized256'
-let g:Powerline_stl_path_style = 'relative'
-" end powerline
-"
-"
 if has("autocmd")
   filetype on
   autocmd FileType python setlocal ts=4 sts=4 sw=4 et
@@ -255,3 +246,11 @@ set backspace=indent,eol,start
 " blank; this is probably a bug, because "dw" deletes all the blanks; use the
 " 'w' flag in 'cpoptions' to make it work like Vi anyway}
 map cw dwi
+
+" vim-airline
+set t_Co=256
+set laststatus=2 " show statusline all time
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline_theme = "dark"
