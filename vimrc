@@ -69,6 +69,9 @@ Bundle "vim-scripts/cscope.vim"
 
 " vim-airline
 Bundle "bling/vim-airline"
+
+" ag.vim for searching codes
+Bundle 'rking/ag.vim'
 " vundle end
 
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
