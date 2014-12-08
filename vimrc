@@ -260,3 +260,12 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_theme = "dark"
+
+
+"
+"inoremap maps a key combination for insert mode
+"<C-e> is the keybinding I am creating.
+"<C-o> is a command that switches vim to normal mode for one command.
+"$ jumps to the end of the line and we are switched back to insert mode.
+inoremap <C-e> <C-o>$
+inoremap <C-a> <C-o>0
