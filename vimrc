@@ -72,6 +72,9 @@ Bundle "bling/vim-airline"
 
 " ag.vim for searching codes
 Bundle 'rking/ag.vim'
+
+Bundle 'vim-scripts/highlight.vim'
+Bundle 'terryma/vim-multiple-cursors'
 " vundle end
 
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
@@ -107,7 +110,7 @@ nnoremap <leader>Q :qa!<cr>
 vnoremap <c-r> "hy:%s/<c-r>h//gc<left><left><left>
 
 " jedi-vim
-let g:jedi#completions_command = "<C-N>"
+" let g:jedi#completions_command = "<C-N>"
 
 
 " syntastic
