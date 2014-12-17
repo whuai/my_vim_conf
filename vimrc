@@ -75,6 +75,9 @@ Bundle 'rking/ag.vim'
 
 Bundle 'vim-scripts/highlight.vim'
 Bundle 'terryma/vim-multiple-cursors'
+
+Bundle 'maksimr/vim-jsbeautify'
+Bundle 'einars/js-beautify'
 " vundle end
 
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
@@ -144,6 +147,7 @@ if has("autocmd")
   autocmd FileType c setlocal ts=4 sts=4 sw=4 et
   autocmd FileType shell setlocal ts=4 sts=4 sw=4 et
   autocmd FileType java setlocal ts=4 sts=4 sw=4 et
+  autocmd FileType php setlocal ts=4 sts=4 sw=4 et
 endif
 
 " Tabularize mapping
@@ -222,7 +226,7 @@ inoremap <leader>' ''<ESC>i
 inoremap <leader>[ []<ESC>i
 inoremap <leader>( ()<ESC>i
 
-" set list listchars=tab:›,trail:-,extends:>,precedes:<,eol:
+" set list listchars=tab:›,trail:-,extends:>,precedes:<,eol::
 " set list listchars=eol:¬
 
 " set cursorcolumn
@@ -269,3 +273,11 @@ let g:airline_theme = "dark"
 "$ jumps to the end of the line and we are switched back to insert mode.
 inoremap <C-e> <C-o>$
 inoremap <C-a> <C-o>0
+
+
+" for html/js/css
+autocmd FileType javascript noremap <buffer>  <Leader>cf :call JsBeautify()<cr>
+" for html
+autocmd FileType html noremap <buffer> <Leader>cf :call HtmlBeautify()<cr>
+" for css or scss
+autocmd FileType css noremap <buffer> <Leader>cf :call CSSBeautify()<cr>
