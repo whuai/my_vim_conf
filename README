@@ -22,3 +22,9 @@ $ ln -s ~/.vim/etc/clang-format ~/.clang-format
 4. YCM
 for Ubuntu
 $ sudo apt-get install cmake libpython2.7-dev
+
+5. python autoformat
+for Ubuntu
+$ sudo apt-get install python-autopep8
+for mac
+$ sudo pip install autopep8

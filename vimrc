@@ -78,6 +78,8 @@ Bundle 'terryma/vim-multiple-cursors'
 
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'
+
+Bundle 'Chiel92/vim-autoformat'
 " vundle end
 
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
@@ -244,6 +246,15 @@ let g:clang_format = "google"
 autocmd FileType c,cc,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cc,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 " end clang-format
+" other language autoformat
+" for html/js/css
+autocmd FileType javascript noremap <buffer>  <Leader>cf :call JsBeautify()<CR>
+" for html
+autocmd FileType html noremap <buffer> <Leader>cf :call HtmlBeautify()<CR>
+" for css or scss
+autocmd FileType css noremap <buffer> <Leader>cf :call CSSBeautify()<CR>
+" for python
+autocmd FileType python noremap <buffer><Leader>cf :Autoformat<CR><CR>
 "
 
 set backspace=indent,eol,start
@@ -275,9 +286,3 @@ inoremap <C-e> <C-o>$
 inoremap <C-a> <C-o>0
 
 
-" for html/js/css
-autocmd FileType javascript noremap <buffer>  <Leader>cf :call JsBeautify()<cr>
-" for html
-autocmd FileType html noremap <buffer> <Leader>cf :call HtmlBeautify()<cr>
-" for css or scss
-autocmd FileType css noremap <buffer> <Leader>cf :call CSSBeautify()<cr>
