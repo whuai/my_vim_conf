@@ -105,6 +105,8 @@ let NERDTreeWinPos = 1
 let tags = "./tags"
 nnoremap <silent> <leader><tab> :NERDTreeToggle<CR>
 nnoremap <F3> :CtrlPSmartTabs<CR>
+" instead of commandT buffer windows
+nnoremap <leader>b :CtrlPBuffer<CR>
 
 " Q: Closes the window
 nnoremap Q :q<cr>
