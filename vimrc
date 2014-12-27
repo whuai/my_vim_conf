@@ -33,6 +33,7 @@ Bundle 'mileszs/ack.vim'
 
 " align text :Tab /pattern
 Bundle 'godlygeek/tabular'                             
+Bundle 'plasticboy/vim-markdown'
 
 " <leader>m  :MRU
 Bundle 'yegappan/mru'                                  
@@ -86,6 +87,7 @@ set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set termencoding=utf-8
 set encoding=utf-8
 
+set nofoldenable
 set nu
 set hlsearch
 set incsearch
