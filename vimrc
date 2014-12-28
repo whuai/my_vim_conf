@@ -49,11 +49,8 @@ Bundle 'sjl/gundo.vim'
 
 " <c-l>
 Bundle 'SirVer/ultisnips'                              
-
 Bundle 'airhuman/vim-snippets'
-
 Bundle 'jmcantrell/vim-virtualenv'
-
 Bundle 'vim-scripts/Command-T'
 
 "easy motion
@@ -76,11 +73,13 @@ Bundle 'rking/ag.vim'
 
 Bundle 'vim-scripts/highlight.vim'
 Bundle 'terryma/vim-multiple-cursors'
-
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'
-
 Bundle 'Chiel92/vim-autoformat'
+
+" .(dot) command for not just the last native comand
+" but also the last plugin command.
+Bundle 'tpope/vim-repeat'
 " vundle end
 
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
