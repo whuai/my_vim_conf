@@ -89,6 +89,8 @@ set encoding=utf-8
 set nofoldenable
 set nu
 set hlsearch
+" Clear the last hlsearch results
+nnoremap <F4> :let @/ = ""<CR>
 set incsearch
 set ignorecase
 set smartcase
