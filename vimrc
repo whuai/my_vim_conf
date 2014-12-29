@@ -76,6 +76,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'
 Bundle 'Chiel92/vim-autoformat'
+Bundle 'altercation/vim-colors-solarized'
 
 " .(dot) command for not just the last native comand
 " but also the last plugin command.
@@ -96,8 +97,10 @@ set ignorecase
 set smartcase
 set autoindent
 set grepprg=ack
-syntax on
-colorscheme desert
+syntax enable
+set background=dark
+colorscheme solarized
+" colorscheme desert
 let g:solarized_termcolors=256
 nnoremap <silent> <leader>2 :TagbarToggle<CR>
 let g:tagbar_left = 1
