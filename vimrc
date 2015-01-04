@@ -293,4 +293,10 @@ let g:airline_theme = "dark"
 inoremap <C-e> <C-o>$
 inoremap <C-a> <C-o>0
 
-
+" Navigating in Command Mode
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-f> <Right>
+cnoremap <C-b> <Left>
+cnoremap <Esc>b <S-Left>
+cnoremap <Esc>f <S-Right>
