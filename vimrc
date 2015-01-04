@@ -96,6 +96,7 @@ set incsearch
 set ignorecase
 set smartcase
 set autoindent
+set pastetoggle=<F6>
 set grepprg=ack
 syntax enable
 set background=dark
