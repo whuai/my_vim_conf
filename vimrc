@@ -29,7 +29,6 @@ Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 Bundle 'a.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'scrooloose/syntastic'
-Bundle 'mileszs/ack.vim'
 
 " align text :Tab /pattern
 Bundle 'godlygeek/tabular'                             
