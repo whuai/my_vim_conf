@@ -194,7 +194,7 @@ let g:gundo_right = 1
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<c-l>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="vertical"
 "let g:UltiSnipsSnippetDirectories=["~/.vim/UltiSnips"]
 nnoremap <F2> :UltiSnipsEdit<CR>
