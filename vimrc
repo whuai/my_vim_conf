@@ -240,6 +240,7 @@ inoremap <leader>( ()<ESC>i
 " set list listchars=eol:¬
 
 " set cursorcolumn
+set cursorline
 
 " set foldmethod=indent
 
