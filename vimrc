@@ -101,7 +101,7 @@ set ignorecase
 set smartcase
 set autoindent
 set pastetoggle=<F6>
-set grepprg=ack
+set grepprg=ag
 syntax enable
 set background=dark
 colorscheme solarized
