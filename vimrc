@@ -85,7 +85,7 @@ Bundle 'tpope/vim-repeat'
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set termencoding=utf-8
 set encoding=utf-8
-
+set hidden
 " for help
 set wildmenu
 set wildmode=longest:full,full
@@ -118,6 +118,8 @@ nnoremap <silent> <leader><tab> :NERDTreeToggle<CR>
 nnoremap <F3> :CtrlPSmartTabs<CR>
 " instead of commandT buffer windows
 nnoremap <leader>b :CtrlPBuffer<CR>
+" search from buffer. a little different from CtrlPBuffer
+nnoremap <leader>tb :CommandTBuffer<CR>
 
 " Q: Closes the window
 nnoremap Q :q<cr>
@@ -288,6 +290,7 @@ set laststatus=2 " show statusline all time
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#fnamemod = ':t' " only show buffer name
 let g:airline_theme = "dark"
 
 
