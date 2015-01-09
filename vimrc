@@ -230,6 +230,7 @@ vnoremap > >gv
 
 " command-T
 let g:CommandTCancelMap='<c-c>'
+let g:CommandTMaxFiles = 100000
 
 " ctrl+k ctrl+l dictionary completion
 set dictionary+=/usr/share/dict/words
