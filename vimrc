@@ -309,3 +309,13 @@ cnoremap <C-f> <Right>
 cnoremap <C-b> <Left>
 cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
+
+" Don't update the display while executing macros! speed up! Oh~Oh~
+set lazyredraw
+
+" Show the current command in the lower right corner
+set showcmd
+
+" Edit and Source vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
