@@ -209,7 +209,7 @@ nnoremap <F2> :UltiSnipsEdit<CR>
 "
 
 " copy
-set clipboard=unnamed
+set clipboard+=unnamed
 
 " easy move between tabs
 map <leader>n <esc>:tabprevious<cr>
@@ -220,6 +220,7 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
+set timeoutlen=500
 
 " sort
 vnoremap <leader>s :sort<cr>
@@ -319,3 +320,8 @@ set showcmd
 " Edit and Source vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+" for Ag quickly jump to the next result
+noremap <F7> <C-W><C-B>j<CR>
+noremap <F8> <C-W><C-B>k<CR>
+map <leader>A :Ag <cr>
