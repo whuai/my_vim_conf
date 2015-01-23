@@ -80,6 +80,10 @@ Bundle 'altercation/vim-colors-solarized'
 " .(dot) command for not just the last native comand
 " but also the last plugin command.
 Bundle 'tpope/vim-repeat'
+
+" Add # vim:ft=ansible: 
+" in your *.yaml *.yml files
+Bundle 'chase/vim-ansible-yaml'
 " vundle end
 
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
@@ -325,3 +329,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 noremap <F7> <C-W><C-B>j<CR>
 noremap <F8> <C-W><C-B>k<CR>
 map <leader>A :Ag <cr>
+
+" vim-ansible-yaml
+"
+let g:ansible_options = {'ignore_blank_lines': 0}
