@@ -333,3 +333,6 @@ map <leader>A :Ag <cr>
 " vim-ansible-yaml
 "
 let g:ansible_options = {'ignore_blank_lines': 0}
+
+" When you forgot to open vim with sudo, use w!!
+cmap w!! w !sudo tee > /dev/null %
