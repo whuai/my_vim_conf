@@ -100,6 +100,9 @@ set nu
 set hlsearch
 " Clear the last hlsearch results
 nnoremap <F4> :let @/ = ""<CR>
+" Combine multi blank lines into one with no highlight
+nmap <leader>ll :g/^$/,/./-j<CR><F4><CR>
+
 set incsearch
 set ignorecase
 set smartcase
@@ -336,3 +339,4 @@ let g:ansible_options = {'ignore_blank_lines': 0}
 
 " When you forgot to open vim with sudo, use w!!
 cmap w!! w !sudo tee > /dev/null %
+
