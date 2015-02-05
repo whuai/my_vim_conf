@@ -26,6 +26,7 @@ Bundle 'git://github.com/tpope/vim-fugitive.git'
 Bundle 'https://github.com/scrooloose/nerdtree.git'
 " Bundle "davidhalter/jedi-vim"
 Bundle 'https://github.com/Valloric/YouCompleteMe.git'
+" 快速切换.c文件与.h文件A AT IH IHT就够用了
 Bundle 'a.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'scrooloose/syntastic'
@@ -56,7 +57,7 @@ Bundle 'vim-scripts/Command-T'
 Bundle "Lokaltog/vim-easymotion"
 
 " for cpp code format
-Bundle "rhysd/vim-clang-format"
+" Bundle "rhysd/vim-clang-format"
 
 " vim-surround
 Bundle "tpope/vim-surround"
@@ -75,7 +76,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'
 Bundle 'Chiel92/vim-autoformat'
-Bundle 'altercation/vim-colors-solarized'
+" Bundle 'altercation/vim-colors-solarized'
 
 " .(dot) command for not just the last native comand
 " but also the last plugin command.
@@ -90,7 +91,7 @@ set hidden
 set wildmenu
 set wildmode=longest:full,full
 " set wildmode=list:longest,full
-
+set paste
 set nofoldenable
 set nu
 set hlsearch
@@ -104,21 +105,30 @@ set pastetoggle=<F6>
 set grepprg=ag
 syntax enable
 set background=dark
-colorscheme solarized
-" colorscheme desert
+" colorscheme solarized
+colorscheme desert
 let g:solarized_termcolors=256
+" 打开标签tab leader+2
 nnoremap <silent> <leader>2 :TagbarToggle<CR>
 let g:tagbar_left = 1
-let g:tagbar_width = 33
+let g:tagbar_width = 30
 let g:tagbar_autoshowtag = 1
 let NERDTreeWinPos = 1
 
+" CtrlP相关设置
+let g:ctrlp_by_filename = 1
+
 let tags = "./tags"
+" 弹出当前文件工作目录下面的目录文件树
 nnoremap <silent> <leader><tab> :NERDTreeToggle<CR>
+" CtrlPSmartTabs可以使用F3弹出窗口，显示当前打开的tab的当前文件，可以随意选择，多tab很好用
 nnoremap <F3> :CtrlPSmartTabs<CR>
 " instead of commandT buffer windows
+" 在2个不同的文件中切换非常方便，连接按leader
+" b即可，同时也可以搜索，选中文件之后，ctrl+t新建tab打开文件
 nnoremap <leader>b :CtrlPBuffer<CR>
 " search from buffer. a little different from CtrlPBuffer
+" 这个和上面是类似的，是在buffer中搜的，上面的更好用一些
 nnoremap <leader>tb :CommandTBuffer<CR>
 
 " Q: Closes the window
@@ -167,6 +177,8 @@ if has("autocmd")
   autocmd FileType php setlocal ts=4 sts=4 sw=4 et
 endif
 
+" 这是一些最常用的一些分隔的最捷键，比如用=、：、等分隔
+" 如果想用其它字符分隔的话，还需要自己去写
 " Tabularize mapping
 nmap <leader>a= :Tabularize /=<CR>
 vmap <leader>a= :Tabularize /=<CR>
@@ -303,6 +315,11 @@ let g:airline_theme = "dark"
 inoremap <C-e> <C-o>$
 inoremap <C-a> <C-o>0
 
+" 使用下面的2个快捷键可以快速的定位到下一个搜索出来的结果
+map <F6> <C-W><C-B>j<cr>
+map <F7> <C-W><C-B>k<cr>
+" 关闭最下面的窗口
+map <F8> <C-W><C-B>:q<cr>
 " Navigating in Command Mode
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
