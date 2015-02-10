@@ -172,6 +172,7 @@ if has("autocmd")
   autocmd FileType shell setlocal ts=4 sts=4 sw=4 et
   autocmd FileType java setlocal ts=4 sts=4 sw=4 et
   autocmd FileType php setlocal ts=4 sts=4 sw=4 et
+  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 et
 endif
 
 " Tabularize mapping
@@ -340,3 +341,5 @@ let g:ansible_options = {'ignore_blank_lines': 0}
 " When you forgot to open vim with sudo, use w!!
 cmap w!! w !sudo tee > /dev/null %
 
+" gui font
+set gfn=Monaco:h18
