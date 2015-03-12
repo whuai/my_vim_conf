@@ -84,6 +84,9 @@ Bundle 'tpope/vim-repeat'
 " Add # vim:ft=ansible: 
 " in your *.yaml *.yml files
 Bundle 'chase/vim-ansible-yaml'
+
+" <leader>bt <leader>bs <leader>bv
+Bundle 'jlanzarotta/bufexplorer'
 " vundle end
 
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
