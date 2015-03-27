@@ -81,10 +81,6 @@ Bundle 'altercation/vim-colors-solarized'
 " but also the last plugin command.
 Bundle 'tpope/vim-repeat'
 
-" Add # vim:ft=ansible: 
-" in your *.yaml *.yml files
-Bundle 'chase/vim-ansible-yaml'
-
 " <leader>bt <leader>bs <leader>bv
 Bundle 'jlanzarotta/bufexplorer'
 " vundle end
@@ -175,7 +171,6 @@ if has("autocmd")
   autocmd FileType shell setlocal ts=4 sts=4 sw=4 et
   autocmd FileType java setlocal ts=4 sts=4 sw=4 et
   autocmd FileType php setlocal ts=4 sts=4 sw=4 et
-  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 et
 endif
 
 " Tabularize mapping
