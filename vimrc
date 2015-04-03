@@ -83,6 +83,9 @@ Bundle 'tpope/vim-repeat'
 
 " <leader>bt <leader>bs <leader>bv
 Bundle 'jlanzarotta/bufexplorer'
+
+" for markdown preview
+Bundle 'shime/vim-livedown'
 " vundle end
 
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
@@ -341,3 +344,13 @@ cmap w!! w !sudo tee > /dev/null %
 
 " gui font
 set gfn=Monaco:h18
+
+" vim-livedown start
+" should markdown preview get shown automatically upon opening markdown buffer
+let g:livedown_autorun = 0
+" should the browser window pop-up upon previewing
+let g:livedown_open = 1
+" the port on which Livedown server will run
+let g:livedown_port = 1337
+nmap <leader>md :LivedownPreview<CR>
+" vim-livedown end
