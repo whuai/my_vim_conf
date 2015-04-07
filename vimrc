@@ -111,10 +111,12 @@ set smartcase
 set autoindent
 set pastetoggle=<F6>
 set grepprg=ag
+
 syntax enable
 set background=dark
 colorscheme solarized
 " colorscheme desert
+
 let g:solarized_termcolors=256
 nnoremap <silent> <leader>2 :TagbarToggle<CR>
 let g:tagbar_left = 1
@@ -253,8 +255,7 @@ inoremap <leader>' ''<ESC>i
 inoremap <leader>[ []<ESC>i
 inoremap <leader>( ()<ESC>i
 
-" set list listchars=tab:›,trail:-,extends:>,precedes:<,eol::
-" set list listchars=eol:¬
+" set list listchars=tab:»·,trail:·,extends:>,precedes:<,eol:¬
 
 " set cursorcolumn
 set cursorline
