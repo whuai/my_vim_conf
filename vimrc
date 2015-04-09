@@ -24,7 +24,6 @@ Bundle 'https://github.com/kien/ctrlp.vim.git'
 Bundle 'git://github.com/majutsushi/tagbar'
 Bundle 'git://github.com/tpope/vim-fugitive.git'
 Bundle 'https://github.com/scrooloose/nerdtree.git'
-" Bundle "davidhalter/jedi-vim"
 Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 Bundle 'a.vim'
 Bundle 'rizzatti/dash.vim'
@@ -142,7 +141,6 @@ vnoremap <c-r> "hy:%s/<c-r>h//gc<left><left><left>
 
 " jedi-vim
 " let g:jedi#completions_command = "<C-N>"
-
 
 " syntastic
 let g:syntastic_check_on_open = 0
@@ -304,7 +302,6 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#fnamemod = ':t' " only show buffer name
 let g:airline_theme = "dark"
 
-
 "
 "inoremap maps a key combination for insert mode
 "<C-e> is the keybinding I am creating.
@@ -355,3 +352,5 @@ let g:livedown_open = 1
 let g:livedown_port = 1337
 nmap <leader>md :LivedownPreview<CR>
 " vim-livedown end
+
+nnoremap <leader>tf :TableFormat<CR>
