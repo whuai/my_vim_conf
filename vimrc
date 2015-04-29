@@ -85,6 +85,8 @@ Bundle 'jlanzarotta/bufexplorer'
 
 " for markdown preview
 Bundle 'shime/vim-livedown'
+
+Bundle 'jiangmiao/auto-pairs'
 " vundle end
 
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
@@ -247,11 +249,12 @@ set dictionary+=/usr/share/dict/words
 nnoremap <c-e> 3<c-e>
 nnoremap <c-y> 3<c-y>
 
-" pairs
-inoremap <leader>" ""<ESC>i
-inoremap <leader>' ''<ESC>i
-inoremap <leader>[ []<ESC>i
-inoremap <leader>( ()<ESC>i
+
+" pairs. Don't use because of auto-pair plugin
+" inoremap <leader>" ""<ESC>i
+" inoremap <leader>' ''<ESC>i
+" inoremap <leader>[ []<ESC>i
+" inoremap <leader>( ()<ESC>i
 
 " set list listchars=tab:»·,trail:·,extends:>,precedes:<,eol:¬
 
