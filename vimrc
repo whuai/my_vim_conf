@@ -358,7 +358,8 @@ nmap <leader>md :LivedownPreview<CR>
 
 nnoremap <leader>tf :TableFormat<CR>
 
-" cscope mapping
+" cscope mappings and settings
+let g:cscope_silent = 1
 " s: Find this C symbol
 nnoremap  <leader>fs :call cscope#find('s', expand('<cword>'))<CR>
 " g: Find this definition
@@ -375,4 +376,4 @@ nnoremap  <leader>fe :call cscope#find('e', expand('<cword>'))<CR>
 nnoremap  <leader>ff :call cscope#find('f', expand('<cword>'))<CR>
 " i: Find files #including this file
 nnoremap  <leader>fi :call cscope#find('i', expand('<cword>'))<CR>
-" cscope mapping end
+" cscope mappings and settings end
