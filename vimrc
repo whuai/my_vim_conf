@@ -380,5 +380,6 @@ nnoremap  <leader>ff :call cscope#find('f', expand('<cword>'))<CR>
 nnoremap  <leader>fi :call cscope#find('i', expand('<cword>'))<CR>
 " cscope mappings and settings end
 
+"Insert Mode move word forward and backward
 inoremap <c-b> <c-\><c-O>b
-inoremap <c-w> <c-\><c-O>w
+inoremap <c-f> <c-\><c-O>w
