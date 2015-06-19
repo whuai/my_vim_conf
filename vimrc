@@ -69,7 +69,7 @@ Bundle "bling/vim-airline"
 " ag.vim for searching codes
 Bundle 'rking/ag.vim'
 
-Bundle 'vim-scripts/highlight.vim'
+" Bundle 'vim-scripts/highlight.vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'
@@ -113,12 +113,13 @@ set autoindent
 set pastetoggle=<F6>
 set grepprg=ag
 
+
+let g:solarized_termcolors=256
 syntax enable
 set background=dark
 colorscheme solarized
 " colorscheme desert
 
-let g:solarized_termcolors=256
 nnoremap <silent> <leader>2 :TagbarToggle<CR>
 let g:tagbar_left = 1
 let g:tagbar_width = 33
@@ -137,6 +138,7 @@ nnoremap <leader>tb :CommandTBuffer<CR>
 nnoremap Q :q<cr>
 " close all windows
 nnoremap <leader>Q :qa!<cr>
+
 
 " Ctrl-r: Easier search and replace
 vnoremap <c-r> "hy:%s/<c-r>h//gc<left><left><left>
@@ -227,10 +229,10 @@ map <leader>n <esc>:tabprevious<cr>
 map <leader>m <esc>:tabnext<cr>
 
 " easy move around windows
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+nnoremap <c-h> <c-w>h
 set timeoutlen=500
 
 " sort
@@ -377,3 +379,6 @@ nnoremap  <leader>ff :call cscope#find('f', expand('<cword>'))<CR>
 " i: Find files #including this file
 nnoremap  <leader>fi :call cscope#find('i', expand('<cword>'))<CR>
 " cscope mappings and settings end
+
+inoremap <c-b> <c-\><c-O>b
+inoremap <c-w> <c-\><c-O>w
