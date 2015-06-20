@@ -112,6 +112,7 @@ set smartcase
 set autoindent
 set pastetoggle=<F6>
 set grepprg=ag
+set t_Co=256
 
 
 let g:solarized_termcolors=256
@@ -299,7 +300,6 @@ set backspace=indent,eol,start
 map cw dwi
 
 " vim-airline
-set t_Co=256
 set laststatus=2 " show statusline all time
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
