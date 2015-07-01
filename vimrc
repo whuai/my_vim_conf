@@ -379,3 +379,6 @@ nnoremap  <leader>fi :call cscope#find('i', expand('<cword>'))<CR>
 "Insert Mode move word forward and backward
 inoremap <c-b> <c-\><c-O>b
 inoremap <c-f> <c-\><c-O>w
+
+" Calculate from current line
+nnoremap <leader>ca yypkA<Esc>jOscale=2<Esc>:.,+1!bc<CR>kdd
