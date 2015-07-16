@@ -259,7 +259,9 @@ nnoremap <c-y> 3<c-y>
 " inoremap <leader>[ []<ESC>i
 " inoremap <leader>( ()<ESC>i
 
-" set list listchars=tab:»·,trail:·,extends:>,precedes:<,eol:¬
+" set list listchars=tab:› ,trail:-,extends:>,precedes:<,eol:¬
+set list listchars=tab:› ,eol:¬
+
 
 " set cursorcolumn
 set cursorline
