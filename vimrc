@@ -265,6 +265,7 @@ set list listchars=tab:› ,eol:¬
 
 " set cursorcolumn
 set cursorline
+set relativenumber
 
 " set foldmethod=indent
 
