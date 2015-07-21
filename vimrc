@@ -266,6 +266,7 @@ set list listchars=tab:› ,eol:¬
 " set cursorcolumn
 set cursorline
 set relativenumber
+nmap <leader>nn :set norelativenumber nonumber<CR>
 
 " set foldmethod=indent
 
