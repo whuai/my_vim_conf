@@ -83,6 +83,17 @@ Bundle 'Chiel92/vim-autoformat'
 Bundle 'tpope/vim-repeat'
 " vundle end
 
+Bundle 'shime/vim-livedown'
+" vim-livedown start
+" should markdown preview get shown automatically upon opening markdown buffer
+let g:livedown_autorun = 0
+" should the browser window pop-up upon previewing
+let g:livedown_open = 1
+" the port on which Livedown server will run
+let g:livedown_port = 1337
+nmap <leader>md :LivedownPreview<CR>
+" vim-livedown end
+
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set termencoding=utf-8
 set encoding=utf-8
@@ -91,7 +102,7 @@ set hidden
 set wildmenu
 set wildmode=longest:full,full
 " set wildmode=list:longest,full
-set paste
+" set paste
 set nofoldenable
 set nu
 set hlsearch
@@ -221,7 +232,7 @@ nnoremap <F2> :UltiSnipsEdit<CR>
 "
 
 " copy
-set clipboard=unnamed
+" set clipboard=unnamed
 
 " easy move between tabs
 map <leader>n <esc>:tabprevious<cr>
@@ -327,3 +338,9 @@ cnoremap <C-f> <Right>
 cnoremap <C-b> <Left>
 cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
+
+au BufEnter /private/tmp/crontab.* setl backupcopy=yes
+set ts=4
+set expandtab
+map <C-k> :set paste<CR>
+map <C-l> :set nopaste<CR>
