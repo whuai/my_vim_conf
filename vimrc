@@ -7,8 +7,7 @@ set nocompatible              " be iMproved
 filetype off                 " required!
 
 set rtp+=~/.vim/vundle
-" call vundle#rc()
-call vundle#begin()
+call vundle#rc()
 
 " Map leader and localleader key to comma
  let mapleader = ","
@@ -88,8 +87,9 @@ Bundle 'shime/vim-livedown'
 
 Bundle 'jiangmiao/auto-pairs'
 
-call vundle#end()
-filetype plugin on
+Bundle 'dyng/ctrlsf.vim'
+
+filetype plugin indent on
 " vundle end
 
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
