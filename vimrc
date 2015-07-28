@@ -87,6 +87,15 @@ Bundle 'shime/vim-livedown'
 
 Bundle 'jiangmiao/auto-pairs'
 
+" Enter - Open corresponding file of current line in the window which CtrlSF
+" is launched from.
+" t - Like Enter but open file in a new tab.
+" p - Like Enter but open file in a preview window.
+" O - Like Enter but always leave CtrlSF window opening.
+" T - Lkie t but focus CtrlSF window instead of new opened tab.
+" q - Quit CtrlSF window.
+" <C-J> - Move cursor to next match.
+" <C-K> - Move cursor to previous match.
 Bundle 'dyng/ctrlsf.vim'
 
 filetype plugin indent on
@@ -389,3 +398,13 @@ inoremap <c-f> <c-\><c-O>w
 
 " Calculate from current line
 nnoremap <leader>ca yypkA<Esc>jOscale=2<Esc>:.,+1!bc<CR>kdd
+
+" ctrlsf mapping
+nmap     <C-F>f <Plug>CtrlSFPrompt
+vmap     <C-F>f <Plug>CtrlSFVwordPath
+vmap     <C-F>F <Plug>CtrlSFVwordExec
+nmap     <C-F>n <Plug>CtrlSFCwordPath
+nmap     <C-F>p <Plug>CtrlSFPwordPath
+nnoremap <C-F>o :CtrlSFOpen<CR>
+nnoremap <C-F>t :CtrlSFToggle<CR>
+inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
