@@ -46,7 +46,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git autojump osx command-not-found python tmux)
 
 # User configuration
 
@@ -90,3 +90,10 @@ fi
 
 alias vi="vim"
 export EDITOR="vim"
+
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+alias mvn="mvn -Denforcer.skip=true "
+
+alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+alias FUCK="fuck"
