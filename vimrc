@@ -23,7 +23,6 @@ Bundle 'https://github.com/kien/ctrlp.vim.git'
 Bundle 'git://github.com/majutsushi/tagbar'
 Bundle 'git://github.com/tpope/vim-fugitive.git'
 Bundle 'https://github.com/scrooloose/nerdtree.git'
-Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 Bundle 'a.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'scrooloose/syntastic'
@@ -98,6 +97,9 @@ Bundle 'jiangmiao/auto-pairs'
 " <C-K> - Move cursor to previous match.
 Bundle 'dyng/ctrlsf.vim'
 
+" strong but heavy autocomplete plugin
+Bundle 'https://github.com/Valloric/YouCompleteMe.git'
+
 filetype plugin indent on
 " vundle end
 
@@ -111,7 +113,10 @@ set wildmode=longest:full,full
 " set wildmode=list:longest,full
 
 set nofoldenable
-set nu
+" set nu
+set relativenumber
+nmap <leader>nn :set relativenumber!<CR>
+
 set hlsearch
 " Clear the last hlsearch results
 nnoremap <F4> :let @/ = ""<CR>
@@ -125,7 +130,6 @@ set autoindent
 set pastetoggle=<F6>
 set grepprg=ag
 set t_Co=256
-
 
 let g:solarized_termcolors=256
 syntax enable
@@ -151,7 +155,6 @@ nnoremap <leader>tb :CommandTBuffer<CR>
 nnoremap Q :q<cr>
 " close all windows
 nnoremap <leader>Q :qa!<cr>
-
 
 " Ctrl-r: Easier search and replace
 vnoremap <c-r> "hy:%s/<c-r>h//gc<left><left><left>
@@ -264,7 +267,6 @@ set dictionary+=/usr/share/dict/words
 nnoremap <c-e> 3<c-e>
 nnoremap <c-y> 3<c-y>
 
-
 " pairs. Don't use because of auto-pair plugin
 " inoremap <leader>" ""<ESC>i
 " inoremap <leader>' ''<ESC>i
@@ -274,11 +276,8 @@ nnoremap <c-y> 3<c-y>
 " set list listchars=tab:› ,trail:-,extends:>,precedes:<,eol:¬
 set list listchars=tab:› ,eol:¬
 
-
 " set cursorcolumn
 set cursorline
-set relativenumber
-nmap <leader>nn :set norelativenumber nonumber<CR>
 
 " set foldmethod=indent
 
@@ -408,3 +407,4 @@ nmap     <C-F>p <Plug>CtrlSFPwordPath
 nnoremap <C-F>o :CtrlSFOpen<CR>
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+
