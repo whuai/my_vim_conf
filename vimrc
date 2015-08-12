@@ -192,13 +192,6 @@ function! YcmAutoTriggerToggle()
   endif
 endfunction
 
-" clang-format
-let g:clang_format = "google"
-" let g:clang_format#style_options = {
-" \ "AccessModifierOffset" : -4,
-" \ "AllowShortIfStatementsOnASingleLine" : "true",
-" \ "AlwaysBreakTemplateDeclarations" : "true",
-" \ "Standard" : "C++11"}
 if has("autocmd")
   filetype on
   autocmd FileType python setlocal ts=4 sts=4 sw=4 et
@@ -208,22 +201,6 @@ if has("autocmd")
   autocmd FileType shell setlocal ts=4 sts=4 sw=4 et
   autocmd FileType java setlocal ts=4 sts=4 sw=4 et
   autocmd FileType php setlocal ts=4 sts=4 sw=4 et
-  autocmd FileType vim setlocal ts=2 sts=2 sw=2 et
-
-  " auto-format
-  autocmd FileType c,cc,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
-  autocmd FileType c,cc,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
-  autocmd FileType javascript noremap <buffer>  <Leader>cf :call JsBeautify()<CR>
-  autocmd FileType html noremap <buffer> <Leader>cf :call HtmlBeautify()<CR>
-  autocmd FileType css noremap <buffer> <Leader>cf :call CSSBeautify()<CR>
-  autocmd FileType python noremap <buffer><Leader>cf :Autoformat<CR><CR>
-
-  " auto-format before write buffer to disk
-  " autocmd BufWritePre *.py :Autoformat
-  " autocmd BufWritePre *.c :ClangFormat
-  " autocmd BufWritePre *.cc :ClangFormat
-  " autocmd BufWritePre *.cpp :ClangFormat
-
 endif
 
 " Tabularize mapping
@@ -316,6 +293,26 @@ set cursorline
 
 " set foldmethod=indent
 
+" clang-format
+let g:clang_format = "google"
+" let g:clang_format#style_options = {
+" \ "AccessModifierOffset" : -4,
+" \ "AllowShortIfStatementsOnASingleLine" : "true",
+" \ "AlwaysBreakTemplateDeclarations" : "true",
+" \ "Standard" : "C++11"}
+" map to <Leader>cf in C++ code
+autocmd FileType c,cc,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cc,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+" end clang-format
+" other language autoformat
+" for html/js/css
+autocmd FileType javascript noremap <buffer>  <Leader>cf :call JsBeautify()<CR>
+" for html
+autocmd FileType html noremap <buffer> <Leader>cf :call HtmlBeautify()<CR>
+" for css or scss
+autocmd FileType css noremap <buffer> <Leader>cf :call CSSBeautify()<CR>
+" for python
+autocmd FileType python noremap <buffer><Leader>cf :Autoformat<CR><CR>
 "
 
 set backspace=indent,eol,start
@@ -423,4 +420,3 @@ nnoremap <C-F>o :CtrlSFOpen<CR>
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
-source $HOME/.vim/hello.vim
