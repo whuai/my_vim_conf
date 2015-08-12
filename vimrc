@@ -116,6 +116,7 @@ set nofoldenable
 " set nu
 set relativenumber
 nmap <leader>nn :set relativenumber!<CR>
+nmap <leader>N :set number!<CR>
 
 set hlsearch
 " Clear the last hlsearch results
@@ -180,10 +181,16 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <silent> <Leader>d :YcmCompleter GoToDefinition<cr>
 nnoremap <silent> <Leader>g :YcmCompleter GoToDeclaration<cr>
-" Shutdown ycm_auto_trigger
-nnoremap <F9> :let g:ycm_auto_trigger = 0<CR>
-" Reopen ycm_auto_trigger
-nnoremap <F10> :let g:ycm_auto_trigger = 1<CR>
+
+noremap <leader>Y :call YcmAutoTriggerToggle()<cr>
+function! YcmAutoTriggerToggle()
+  let cur = g:ycm_auto_trigger
+  if cur == 0
+    let g:ycm_auto_trigger = 1
+  else
+    let g:ycm_auto_trigger = 0
+  endif
+endfunction
 
 if has("autocmd")
   filetype on
@@ -272,6 +279,11 @@ nnoremap <c-y> 3<c-y>
 " inoremap <leader>' ''<ESC>i
 " inoremap <leader>[ []<ESC>i
 " inoremap <leader>( ()<ESC>i
+
+" 单个word加双引号
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+" visually selected加双引号
+vnoremap <leader>" :normal! `<i"<esc>`>la"<esc>"
 
 " set list listchars=tab:› ,trail:-,extends:>,precedes:<,eol:¬
 set list listchars=tab:› ,eol:¬
