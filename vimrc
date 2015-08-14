@@ -1,6 +1,5 @@
-" pathogen start
-call pathogen#runtime_append_all_bundles()
-" pathogen end
+" start pathogen
+execute pathogen#infect()
 
 " vundle start
 set nocompatible              " be iMproved
