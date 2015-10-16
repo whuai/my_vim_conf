@@ -1,11 +1,9 @@
-" pathogen start
-call pathogen#runtime_append_all_bundles()
-" pathogen end
+" start pathogen
+execute pathogen#infect()
 
 " vundle start
 set nocompatible              " be iMproved
-filetype on                 " required!
-filetype plugin on
+filetype off                 " required!
 
 set rtp+=~/.vim/vundle
 call vundle#rc()
@@ -71,7 +69,7 @@ Bundle "bling/vim-airline"
 " ag.vim for searching codes
 Bundle 'rking/ag.vim'
 
-Bundle 'vim-scripts/highlight.vim'
+" Bundle 'vim-scripts/highlight.vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'
@@ -81,6 +79,31 @@ Bundle 'Chiel92/vim-autoformat'
 " .(dot) command for not just the last native comand
 " but also the last plugin command.
 Bundle 'tpope/vim-repeat'
+
+" <leader>bt <leader>bs <leader>bv
+Bundle 'jlanzarotta/bufexplorer'
+
+" for markdown preview
+Bundle 'shime/vim-livedown'
+
+Bundle 'jiangmiao/auto-pairs'
+
+" Enter - Open corresponding file of current line in the window which CtrlSF
+" is launched from.
+" t - Like Enter but open file in a new tab.
+" p - Like Enter but open file in a preview window.
+" O - Like Enter but always leave CtrlSF window opening.
+" T - Lkie t but focus CtrlSF window instead of new opened tab.
+" q - Quit CtrlSF window.
+" <C-J> - Move cursor to next match.
+" <C-K> - Move cursor to previous match.
+Bundle 'dyng/ctrlsf.vim'
+
+" strong but heavy autocomplete plugin
+Bundle 'https://github.com/Valloric/YouCompleteMe.git'
+
+Bundle 'benmills/vimux'
+filetype plugin indent on
 " vundle end
 
 Bundle 'shime/vim-livedown'
@@ -105,15 +128,25 @@ set wildmode=longest:full,full
 " set paste
 set nofoldenable
 set nu
+" set relativenumber
+nmap <leader>nn :set relativenumber!<CR>
+nmap <leader>N :set number!<CR>
+
 set hlsearch
 " Clear the last hlsearch results
 nnoremap <F4> :let @/ = ""<CR>
+" Combine multi blank lines into one with no highlight
+nmap <leader>ll :g/^$/,/./-j<CR><F4><CR>
+
 set incsearch
 set ignorecase
 set smartcase
 set autoindent
 set pastetoggle=<F6>
 set grepprg=ag
+set t_Co=256
+
+let g:solarized_termcolors=256
 syntax enable
 set background=dark
 " colorscheme solarized
@@ -153,7 +186,6 @@ vnoremap <c-r> "hy:%s/<c-r>h//gc<left><left><left>
 " jedi-vim
 " let g:jedi#completions_command = "<C-N>"
 
-
 " syntastic
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
@@ -172,10 +204,16 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <silent> <Leader>d :YcmCompleter GoToDefinition<cr>
 nnoremap <silent> <Leader>g :YcmCompleter GoToDeclaration<cr>
-" Shutdown ycm_auto_trigger
-nnoremap <F9> :let g:ycm_auto_trigger = 0<CR>
-" Reopen ycm_auto_trigger
-nnoremap <F10> :let g:ycm_auto_trigger = 1<CR>
+
+noremap <leader>Y :call YcmAutoTriggerToggle()<cr>
+function! YcmAutoTriggerToggle()
+  let cur = g:ycm_auto_trigger
+  if cur == 0
+    let g:ycm_auto_trigger = 1
+  else
+    let g:ycm_auto_trigger = 0
+  endif
+endfunction
 
 if has("autocmd")
   filetype on
@@ -239,10 +277,11 @@ map <leader>n <esc>:tabprevious<cr>
 map <leader>m <esc>:tabnext<cr>
 
 " easy move around windows
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+nnoremap <c-h> <c-w>h
+set timeoutlen=500
 
 " sort
 vnoremap <leader>s :sort<cr>
@@ -261,14 +300,19 @@ set dictionary+=/usr/share/dict/words
 nnoremap <c-e> 3<c-e>
 nnoremap <c-y> 3<c-y>
 
-" pairs
-inoremap <leader>" ""<ESC>i
-inoremap <leader>' ''<ESC>i
-inoremap <leader>[ []<ESC>i
-inoremap <leader>( ()<ESC>i
+" pairs. Don't use because of auto-pair plugin
+" inoremap <leader>" ""<ESC>i
+" inoremap <leader>' ''<ESC>i
+" inoremap <leader>[ []<ESC>i
+" inoremap <leader>( ()<ESC>i
 
-" set list listchars=tab:›,trail:-,extends:>,precedes:<,eol::
-" set list listchars=eol:¬
+" 单个word加双引号
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+" visually selected加双引号
+vnoremap <leader>" :normal! `<i"<esc>`>la"<esc>"
+
+" set list listchars=tab:› ,trail:-,extends:>,precedes:<,eol:¬
+set list listchars=tab:› ,eol:¬
 
 " set cursorcolumn
 set cursorline
@@ -309,14 +353,12 @@ set backspace=indent,eol,start
 map cw dwi
 
 " vim-airline
-set t_Co=256
 set laststatus=2 " show statusline all time
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#fnamemod = ':t' " only show buffer name
 let g:airline_theme = "dark"
-
 
 "
 "inoremap maps a key combination for insert mode
@@ -329,6 +371,7 @@ inoremap <C-a> <C-o>0
 " 使用下面的2个快捷键可以快速的定位到下一个搜索出来的结果
 map <F6> <C-W><C-B>j<cr>
 map <F7> <C-W><C-B>k<cr>
+map <leader>A :Ag <cr>
 " 关闭最下面的窗口
 map <F8> <C-W><C-B>:q<cr>
 " Navigating in Command Mode
@@ -344,3 +387,96 @@ set ts=4
 set expandtab
 map <C-k> :set paste<CR>
 map <C-l> :set nopaste<CR>
+
+" Don't update the display while executing macros! speed up! Oh~Oh~
+set lazyredraw
+
+" Show the current command in the lower right corner
+set showcmd
+
+" Edit and Source vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+
+" When you forgot to open vim with sudo, use w!!
+cmap w!! w !sudo tee > /dev/null %
+
+" gui font
+set gfn=Monaco:h18
+
+" vim-livedown start
+" should markdown preview get shown automatically upon opening markdown buffer
+let g:livedown_autorun = 0
+" should the browser window pop-up upon previewing
+let g:livedown_open = 1
+" the port on which Livedown server will run
+let g:livedown_port = 1337
+nmap <leader>md :LivedownPreview<CR>
+" vim-livedown end
+
+nnoremap <leader>tf :TableFormat<CR>
+
+" cscope mappings and settings
+let g:cscope_silent = 1
+" s: Find this C symbol
+nnoremap  <leader>fs :call cscope#find('s', expand('<cword>'))<CR>
+" g: Find this definition
+nnoremap  <leader>fg :call cscope#find('g', expand('<cword>'))<CR>
+" d: Find functions called by this function
+nnoremap  <leader>fd :call cscope#find('d', expand('<cword>'))<CR>
+" c: Find functions calling this function
+nnoremap  <leader>fc :call cscope#find('c', expand('<cword>'))<CR>
+" t: Find this text string
+nnoremap  <leader>ft :call cscope#find('t', expand('<cword>'))<CR>
+" e: Find this egrep pattern
+nnoremap  <leader>fe :call cscope#find('e', expand('<cword>'))<CR>
+" f: Find this file
+nnoremap  <leader>ff :call cscope#find('f', expand('<cword>'))<CR>
+" i: Find files #including this file
+nnoremap  <leader>fi :call cscope#find('i', expand('<cword>'))<CR>
+" cscope mappings and settings end
+
+"Insert Mode move word forward and backward
+inoremap <c-b> <c-\><c-O>b
+inoremap <c-f> <c-\><c-O>w
+
+" Calculate from current line
+nnoremap <leader>ca yypkA<Esc>jOscale=2<Esc>:.,+1!bc<CR>kdd
+
+" ctrlsf mapping
+nmap     <C-F>f <Plug>CtrlSFPrompt
+vmap     <C-F>f <Plug>CtrlSFVwordPath
+vmap     <C-F>F <Plug>CtrlSFVwordExec
+nmap     <C-F>n <Plug>CtrlSFCwordPath
+nmap     <C-F>p <Plug>CtrlSFPwordPath
+nnoremap <C-F>o :CtrlSFOpen<CR>
+nnoremap <C-F>t :CtrlSFToggle<CR>
+inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+
+
+
+" 'benmills/vimux' mappings
+" Run the current file with rspec
+" map <Leader>rb :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
+" Prompt for a command to run
+map <Leader>vp :VimuxPromptCommand<CR>
+" Run last command executed by VimuxRunCommand
+map <Leader>vl :VimuxRunLastCommand<CR>
+" Inspect runner pane
+map <Leader>vi :VimuxInspectRunner<CR>
+" Close vim tmux runner opened by VimuxRunCommand
+map <Leader>vq :VimuxCloseRunner<CR>
+" Interrupt any command running in the runner pane
+map <Leader>vx :VimuxInterruptRunner<CR>
+" Zoom the runner pane (use <bind-key> z to restore runner pane)
+map <Leader>vz :call VimuxZoomRunner()<CR>
+
+" exit insert mode
+inoremap jk <esc>
+" disable ESC instead of jk
+" inoremap <esc> <nop>
+
+" 更新括号里的内容，非常有用
+onoremap in( :<c-u>normal! f(vi(<cr>
+onoremap il( :<c-u>normal! F)vi(<cr>
