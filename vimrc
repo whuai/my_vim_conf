@@ -86,7 +86,7 @@ Bundle 'jlanzarotta/bufexplorer'
 " for markdown preview
 Bundle 'shime/vim-livedown'
 
-Bundle 'jiangmiao/auto-pairs'
+" Bundle 'jiangmiao/auto-pairs'
 
 " Enter - Open corresponding file of current line in the window which CtrlSF
 " is launched from.
@@ -300,11 +300,6 @@ set dictionary+=/usr/share/dict/words
 nnoremap <c-e> 3<c-e>
 nnoremap <c-y> 3<c-y>
 
-" pairs. Don't use because of auto-pair plugin
-" inoremap <leader>" ""<ESC>i
-" inoremap <leader>' ''<ESC>i
-" inoremap <leader>[ []<ESC>i
-" inoremap <leader>( ()<ESC>i
 
 " 单个word加双引号
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
@@ -312,7 +307,7 @@ nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 vnoremap <leader>" :normal! `<i"<esc>`>la"<esc>"
 
 " set list listchars=tab:› ,trail:-,extends:>,precedes:<,eol:¬
-set list listchars=tab:› ,eol:¬
+" set list listchars=tab:› ,eol:¬
 
 " set cursorcolumn
 set cursorline
